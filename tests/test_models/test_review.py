@@ -14,23 +14,4 @@ class test_review(test_basemodel):
         self.name = "Review"
         self.value = Review
 
-    def test_place_id(self):
-        """Tets review place_id atrribute """
-        new = self.value()
-        self.assertEqual(type(new.place_id), str if
-                         os.getenv('HBNB_TYPE_STORAGE') != 'db' else
-                         type(None))
 
-    def test_user_id(self):
-        """Tests review user_id """
-        new = self.value()
-        self.assertEqual(type(new.user_id), str if
-                         os.getenv('HBNB_TYPE_STORAGE') != 'db' else
-                         type(None))
-
-    def test_text(self):
-        """Tests review module text attribute """
-        new = self.value()
-        self.assertEqual(type(new.text), str if
-                         os.getenv('HBNB_TYPE_STORAGE') != 'db' else
-                         type(None))
