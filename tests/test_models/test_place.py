@@ -24,7 +24,7 @@ class test_Place(test_basemodel):
     def test_user_id(self):
         """Tests user_id attribute """
         new = self.value()
-        self.assertEqual(type(new.user_id), str  if
+        self.assertEqual(type(new.user_id), str if
                          os.getenv('HBNB_TYPE_STORAGE') != 'db' else
                          type(None))
 
@@ -38,7 +38,7 @@ class test_Place(test_basemodel):
     def test_description(self):
         """Tests place description """
         new = self.value()
-        self.assertEqual(type(new.description), str  if
+        self.assertEqual(type(new.description), str if
                          os.getenv('HBNB_TYPE_STORAGE') != 'db' else
                          type(None))
 
@@ -66,14 +66,14 @@ class test_Place(test_basemodel):
     def test_price_by_night(self):
         """Tests place night price """
         new = self.value()
-        self.assertEqual(type(new.price_by_night), int  if
+        self.assertEqual(type(new.price_by_night), int if
                          os.getenv('HBNB_TYPE_STORAGE') != 'db' else
                          type(None))
 
     def test_latitude(self):
         """Tests place latitude """
         new = self.value()
-        self.assertEqual(type(new.latitude), float  if
+        self.assertEqual(type(new.latitude), float if
                          os.getenv('HBNB_TYPE_STORAGE') != 'db' else
                          type(None))
 
@@ -87,6 +87,6 @@ class test_Place(test_basemodel):
     def test_amenity_ids(self):
         """Tests amenity ids """
         new = self.value()
-        self.assertEqual(type(new.amenity_ids), list  if
+        self.assertEqual(type(new.amenity_ids), list if
                          os.getenv('HBNB_TYPE_STORAGE') != 'db' else
                          type(None))

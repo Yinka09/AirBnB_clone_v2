@@ -4,6 +4,7 @@ from tests.test_models.test_base_model import test_basemodel
 from models.review import Review
 import os
 
+
 class test_review(test_basemodel):
     """Tests review class """
 
@@ -23,7 +24,7 @@ class test_review(test_basemodel):
     def test_user_id(self):
         """Tests review user_id """
         new = self.value()
-        self.assertEqual(type(new.user_id), str  if
+        self.assertEqual(type(new.user_id), str if
                          os.getenv('HBNB_TYPE_STORAGE') != 'db' else
                          type(None))
 
