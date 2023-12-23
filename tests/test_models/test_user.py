@@ -48,7 +48,7 @@ class test_User(test_basemodel):
         new = self.value()
         self.assertEqual(type(new.password), str if
                          os.getenv('HBNB_TYPE_STORAGE') != 'db' else
-                         typei(None))
+                         type(None))
     
     def test_str(self):
         """Test __str__ representation."""
@@ -104,7 +104,3 @@ class test_User(test_basemodel):
                          user_dict["updated_at"])
         self.assertEqual(self.user.email, user_dict["email"])
         self.assertEqual(self.user.password, user_dict["password"])
-
-
-if __name__ == "__main__":
-    unittest.main()
