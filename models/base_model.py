@@ -8,6 +8,7 @@ from sqlalchemy.ext.declarative import declarative_base
 # Define the ORM base class
 Base = declarative_base()
 
+
 class BaseModel:
     """
     This class represents a base model for other models to inherit from.
@@ -24,7 +25,7 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """Instatntiates a new model"""
-        if (not kwargs) or ("updated_at" not in kwargs) :
+        if (not kwargs) or ("updated_at" not in kwargs):
             from models import storage
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()

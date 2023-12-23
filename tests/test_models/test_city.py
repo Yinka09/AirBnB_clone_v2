@@ -40,7 +40,6 @@ class TestCity(unittest.TestCase):
         except Exception:
             pass
 
-
     def test_checking_for_docstring_City(self):
         """checking for docstrings"""
         self.assertIsNotNone(City.__doc__)

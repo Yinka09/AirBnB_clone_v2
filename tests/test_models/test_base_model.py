@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-""" """
+"""Unittest for basemodel """
 from models.base_model import BaseModel
 import unittest
-import datetime
+from datetime import datetime
 from uuid import UUID
 import json
 import os
+from models.engine.file_storage import FileStorage
 
 
 class test_basemodel(unittest.TestCase):
-    """ """
+    """Tests for the basemodel class """
 
     def __init__(self, *args, **kwargs):
         """ """
@@ -24,7 +25,7 @@ class test_basemodel(unittest.TestCase):
     def tearDown(self):
         try:
             os.remove('file.json')
-        except:
+        except Exception:
             pass
 
     def test_default(self):
@@ -91,3 +92,6 @@ class test_basemodel(unittest.TestCase):
         n = new.to_dict()
         new = BaseModel(**n)
         self.assertFalse(new.created_at == new.updated_at)
+
+    if __name__ == "__main__":
+        unittest.main()
