@@ -57,7 +57,9 @@ file { '/data/web_static/current':
 } ->
 
 exec { 'chown -R ubuntu:ubuntu /data/':
-  path => '/usr/bin/:/usr/local/bin/:/bin/'
+  command => '/bin/chown -R root:root /data/',
+  path    => ['/bin', '/usr/bin'],
+  user    => 'root',
 }
 
 file { '/var/www':
